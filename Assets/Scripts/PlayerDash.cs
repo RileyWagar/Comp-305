@@ -10,6 +10,7 @@ public class PlayerDash : MonoBehaviour
     public PlayerMovement movement;
     public DashCollision collision;
     Rigidbody2D rb;
+    Animator anim;
     public bool dash = true;
     int dashDuration;
     bool dashing;
@@ -24,6 +25,7 @@ public class PlayerDash : MonoBehaviour
     int dashFreezeTimer = 0;
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         dashDuration = dashDurationMax;
     }
@@ -38,6 +40,7 @@ public class PlayerDash : MonoBehaviour
                 dash = false;
                 collision.dashing = true;
                 movement.moveSpeed = 0;
+                anim.SetBool("dashing", true);
             }
             else if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
             {
@@ -46,6 +49,7 @@ public class PlayerDash : MonoBehaviour
                 dash = false;
                 collision.dashing = true;
                 movement.moveSpeed = 0;
+                anim.SetBool("dashing", true);
             }
             else if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W))
             {
@@ -54,6 +58,7 @@ public class PlayerDash : MonoBehaviour
                 dash = false;
                 collision.dashing = true;
                 movement.moveSpeed = 0;
+                anim.SetBool("dashing", true);
             }
             else if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
             {
@@ -62,6 +67,7 @@ public class PlayerDash : MonoBehaviour
                 dash = false;
                 collision.dashing = true;
                 movement.moveSpeed = 0;
+                anim.SetBool("dashing", true);
             }
             else if(Input.GetKey(KeyCode.A))
             {
@@ -70,6 +76,7 @@ public class PlayerDash : MonoBehaviour
                 dash = false;
                 collision.dashing = true;
                 movement.moveSpeed = 0;
+                anim.SetBool("dashing", true);
             }
             else if(Input.GetKey(KeyCode.D))
             {
@@ -78,6 +85,7 @@ public class PlayerDash : MonoBehaviour
                 dash = false;
                 collision.dashing = true;
                 movement.moveSpeed = 0;
+                anim.SetBool("dashing", true);
             }
             else if(Input.GetKey(KeyCode.W))
             {
@@ -86,6 +94,7 @@ public class PlayerDash : MonoBehaviour
                 dash = false;
                 collision.dashing = true;
                 movement.moveSpeed = 0;
+                anim.SetBool("dashing", true);
             }
             else if(Input.GetKey(KeyCode.S))
             {
@@ -94,6 +103,7 @@ public class PlayerDash : MonoBehaviour
                 dash = false;
                 collision.dashing = true;
                 movement.moveSpeed = 0;
+                anim.SetBool("dashing", true);
             }
         }
         if(dashUp)
@@ -154,6 +164,7 @@ public class PlayerDash : MonoBehaviour
             dashing = false;
             dashDuration = dashDurationMax;
             collision.dashing = false;
+            anim.SetBool("dashing", false);
         }
     }
     void DashLeft()
@@ -171,6 +182,7 @@ public class PlayerDash : MonoBehaviour
             dashing = false;
             dashDuration = dashDurationMax;
             collision.dashing = false;
+            anim.SetBool("dashing", false);
         }
     }
     void DashRight()
@@ -188,6 +200,7 @@ public class PlayerDash : MonoBehaviour
             dashing = false;
             dashDuration = dashDurationMax;
             collision.dashing = false;
+            anim.SetBool("dashing", false);
         }
     }
     void DashDown()
@@ -205,6 +218,7 @@ public class PlayerDash : MonoBehaviour
             dashing = false;
             dashDuration = dashDurationMax;
             collision.dashing = false;
+            anim.SetBool("dashing", false);
         }
     }
     void DashUpLeft()
@@ -222,6 +236,7 @@ public class PlayerDash : MonoBehaviour
             dashing = false;
             dashDuration = dashDurationMax;
             collision.dashing = false;
+            anim.SetBool("dashing", false);
         }
     }
     void DashUpRight()
@@ -239,6 +254,7 @@ public class PlayerDash : MonoBehaviour
             dashing = false;
             dashDuration = dashDurationMax;
             collision.dashing = false;
+            anim.SetBool("dashing", false);
         }
     }
     void DashDownLeft()
@@ -256,6 +272,7 @@ public class PlayerDash : MonoBehaviour
             dashing = false;
             dashDuration = dashDurationMax;
             collision.dashing = false;
+            anim.SetBool("dashing", false);
         }
     }
     void DashDownRight()
@@ -273,6 +290,7 @@ public class PlayerDash : MonoBehaviour
             dashing = false;
             dashDuration = dashDurationMax;
             collision.dashing = false;
+            anim.SetBool("dashing", false);
         }
     }
     void OnCollisionStay2D(Collision2D other)
