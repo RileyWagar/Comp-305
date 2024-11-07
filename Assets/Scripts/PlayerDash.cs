@@ -11,9 +11,10 @@ public class PlayerDash : MonoBehaviour
     public DashCollision collision;
     Rigidbody2D rb;
     Animator anim;
+    public PlayerJump jump;
     public bool dash = true;
     int dashDuration;
-    bool dashing;
+    public bool dashing;
     bool dashUp;
     bool dashLeft;
     bool dashRight;
@@ -23,6 +24,7 @@ public class PlayerDash : MonoBehaviour
     bool dashDownLeft;
     bool dashDownRight;
     int dashFreezeTimer = 0;
+    bool stopDash;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -155,7 +157,10 @@ public class PlayerDash : MonoBehaviour
         {
             dashing = true;
             dashDuration--;
-            transform.position = new Vector3(transform.position.x, transform.position.y + dashSpeed, transform.position.z);
+            if(!stopDash)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y + dashSpeed, transform.position.z);
+            }
         }
         if(dashDuration <= 0)
         {
@@ -165,6 +170,10 @@ public class PlayerDash : MonoBehaviour
             dashDuration = dashDurationMax;
             collision.dashing = false;
             anim.SetBool("dashing", false);
+            if(!jump.onGround)
+            {
+                anim.SetBool("jumping", true);
+            }
         }
     }
     void DashLeft()
@@ -173,7 +182,10 @@ public class PlayerDash : MonoBehaviour
         {
             dashing = true;
             dashDuration--;
-            transform.position = new Vector3(transform.position.x - dashSpeed, transform.position.y, transform.position.z);
+            if (!stopDash)
+            {
+                transform.position = new Vector3(transform.position.x - dashSpeed, transform.position.y, transform.position.z);
+            }
         }
         if (dashDuration <= 0)
         {
@@ -183,6 +195,10 @@ public class PlayerDash : MonoBehaviour
             dashDuration = dashDurationMax;
             collision.dashing = false;
             anim.SetBool("dashing", false);
+            if (!jump.onGround)
+            {
+                anim.SetBool("jumping", true);
+            }
         }
     }
     void DashRight()
@@ -191,7 +207,10 @@ public class PlayerDash : MonoBehaviour
         {
             dashing = true;
             dashDuration--;
-            transform.position = new Vector3(transform.position.x + dashSpeed, transform.position.y, transform.position.z);
+            if (!stopDash)
+            {
+                transform.position = new Vector3(transform.position.x + dashSpeed, transform.position.y, transform.position.z);
+            }
         }
         if (dashDuration <= 0)
         {
@@ -201,6 +220,10 @@ public class PlayerDash : MonoBehaviour
             dashDuration = dashDurationMax;
             collision.dashing = false;
             anim.SetBool("dashing", false);
+            if (!jump.onGround)
+            {
+                anim.SetBool("jumping", true);
+            }
         }
     }
     void DashDown()
@@ -209,7 +232,10 @@ public class PlayerDash : MonoBehaviour
         {
             dashing = true;
             dashDuration--;
-            transform.position = new Vector3(transform.position.x, transform.position.y - dashSpeed, transform.position.z);
+            if (!stopDash)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y - dashSpeed, transform.position.z);
+            }
         }
         if (dashDuration <= 0)
         {
@@ -219,6 +245,10 @@ public class PlayerDash : MonoBehaviour
             dashDuration = dashDurationMax;
             collision.dashing = false;
             anim.SetBool("dashing", false);
+            if (!jump.onGround)
+            {
+                anim.SetBool("jumping", true);
+            }
         }
     }
     void DashUpLeft()
@@ -227,7 +257,10 @@ public class PlayerDash : MonoBehaviour
         {
             dashing = true;
             dashDuration--;
-            transform.position = new Vector3(transform.position.x - dashSpeed, transform.position.y + dashSpeed, transform.position.z);
+            if (!stopDash)
+            {
+                transform.position = new Vector3(transform.position.x - dashSpeed, transform.position.y + dashSpeed, transform.position.z);
+            }
         }
         if (dashDuration <= 0)
         {
@@ -237,6 +270,10 @@ public class PlayerDash : MonoBehaviour
             dashDuration = dashDurationMax;
             collision.dashing = false;
             anim.SetBool("dashing", false);
+            if (!jump.onGround)
+            {
+                anim.SetBool("jumping", true);
+            }
         }
     }
     void DashUpRight()
@@ -245,7 +282,10 @@ public class PlayerDash : MonoBehaviour
         {
             dashing = true;
             dashDuration--;
-            transform.position = new Vector3(transform.position.x + dashSpeed, transform.position.y + dashSpeed, transform.position.z);
+            if (!stopDash)
+            {
+                transform.position = new Vector3(transform.position.x + dashSpeed, transform.position.y + dashSpeed, transform.position.z);
+            }
         }
         if (dashDuration <= 0)
         {
@@ -255,6 +295,10 @@ public class PlayerDash : MonoBehaviour
             dashDuration = dashDurationMax;
             collision.dashing = false;
             anim.SetBool("dashing", false);
+            if (!jump.onGround)
+            {
+                anim.SetBool("jumping", true);
+            }
         }
     }
     void DashDownLeft()
@@ -263,7 +307,10 @@ public class PlayerDash : MonoBehaviour
         {
             dashing = true;
             dashDuration--;
-            transform.position = new Vector3(transform.position.x - dashSpeed, transform.position.y - dashSpeed, transform.position.z);
+            if (!stopDash)
+            {
+                transform.position = new Vector3(transform.position.x - dashSpeed, transform.position.y - dashSpeed, transform.position.z);
+            }
         }
         if (dashDuration <= 0)
         {
@@ -273,6 +320,10 @@ public class PlayerDash : MonoBehaviour
             dashDuration = dashDurationMax;
             collision.dashing = false;
             anim.SetBool("dashing", false);
+            if (!jump.onGround)
+            {
+                anim.SetBool("jumping", true);
+            }
         }
     }
     void DashDownRight()
@@ -281,7 +332,10 @@ public class PlayerDash : MonoBehaviour
         {
             dashing = true;
             dashDuration--;
-            transform.position = new Vector3(transform.position.x + dashSpeed, transform.position.y - dashSpeed, transform.position.z);
+            if (!stopDash)
+            {
+                transform.position = new Vector3(transform.position.x + dashSpeed, transform.position.y - dashSpeed, transform.position.z);
+            }
         }
         if (dashDuration <= 0)
         {
@@ -291,6 +345,10 @@ public class PlayerDash : MonoBehaviour
             dashDuration = dashDurationMax;
             collision.dashing = false;
             anim.SetBool("dashing", false);
+            if (!jump.onGround)
+            {
+                anim.SetBool("jumping", true);
+            }
         }
     }
     void OnCollisionStay2D(Collision2D other)
@@ -298,6 +356,18 @@ public class PlayerDash : MonoBehaviour
         if(other.gameObject.tag == "Ground")
         {
             dash = true;
+            stopDash = true;
+        }
+        if(other.gameObject.tag == "Terrain");
+        {
+            stopDash = true;
+        }
+    }
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Ground" || other.gameObject.tag == "Terrain")
+        {
+            stopDash = false;
         }
     }
 }

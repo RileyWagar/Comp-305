@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 6372478473066942931}
   - component: {fileID: 3272115602807737900}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Axel
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,11 +226,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d51176fbb8f5734f93f8536cc4381f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 0.05
+  dashSpeed: 0.1
   dashFreezeMax: 150
-  dashDurationMax: 60
+  dashDurationMax: 75
   movement: {fileID: 3134080823228209930}
   collision: {fileID: 6327643725521392670}
+  jump: {fileID: 8940618133375727745}
   dash: 0
 --- !u!61 &5673921937829718550
 BoxCollider2D:
@@ -264,7 +265,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0014508963, y: -0.013057701}
+  m_Offset: {x: -0.0014508963, y: -0.24989349}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -275,7 +276,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.39354122, y: 0.52121675}
+  m_Size: {x: 0.39354122, y: 0.01636684}
   m_EdgeRadius: 0
 --- !u!50 &6372478473066942931
 Rigidbody2D:
@@ -289,10 +290,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1.2
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

@@ -19,20 +19,26 @@ public class PlayerJump : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && (onGround == true || doubleJump == true))
         {
             anim.SetBool("jumpStart", true);
-            anim.SetBool("jumpFall", false);
+            anim.SetBool("jumping", false);
+            rb.velocity = new Vector3(0, 0, 0);
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             if(!onGround)
             {
                 doubleJump = false;
             }
         }
+        if(rb.velocity.y > 0 && !onGround)
+        {
+            anim.SetBool("jumpStart", false);
+            anim.SetBool("jumping", true);
+        }
     }
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "Ground")
         {
+            anim.SetBool("jumping", false);
             anim.SetBool("jumpStart", false);
-            anim.SetBool("jumpFall", false);
             onGround = true;
             doubleJump = true;
         }
