@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Enemy
   - Terrain
+  - End
+  - Void
   layers:
   - Default
   - TransparentFX
