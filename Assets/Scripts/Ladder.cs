@@ -11,15 +11,18 @@ public class Ladder : MonoBehaviour
     public PlayerJump jump;
     Vector3 ladderPos;
     Rigidbody2D rb;
+    Animator anim;
     [SerializeField] float climbSpeed;
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
         if(touchingLadder && Input.GetKeyDown(KeyCode.W))
         {
+            anim.SetBool("climbing", true);
             climbing = true;
             movement.stopMoving = true;
         }
@@ -45,7 +48,7 @@ public class Ladder : MonoBehaviour
     {
         if(other.tag == "Ladder")
         {
-            Debug.Log("Exit");
+            anim.SetBool("climbing", false);
             touchingLadder = false;
             movement.stopMoving = false;
             climbing = false;
