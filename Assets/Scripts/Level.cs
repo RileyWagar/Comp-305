@@ -8,17 +8,37 @@ public class Level : MonoBehaviour
     void Start()
     {
         checkpoint = new Vector3(-8.9f, -4.45f, 0);
+        transform.position = checkpoint;
+    }
+    void Update()
+    {
+        if(PlayerStats.health <= 0)
+        {
+            transform.position = checkpoint;
+            PlayerStats.health = 3;
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "End")
         {
-            checkpoint = new Vector3(325.2f, -2.84f, 0);
+            if(checkpoint == new Vector3(-8.9f, -4.45f, 0))
+            {
+                checkpoint = new Vector3(261.6f, -3.479763f, 0);
+            }
+            else if(checkpoint == new Vector3(261.6f, -3.479763f, 0))
+            {
+                checkpoint = new Vector3(325.2f, -2.84f, 0);
+            }
+            else if(checkpoint == new Vector3(325.2f, -2.84f, 0))
+            {
+
+            }
             transform.position = checkpoint;
         }
         if(other.tag == "Void")
         {
-            transform.position = checkpoint;
+            PlayerStats.health = 0;
         }
     }
 }

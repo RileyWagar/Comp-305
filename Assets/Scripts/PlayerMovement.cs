@@ -10,9 +10,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float moveSpeedIncrease;
     public float moveSpeed = 0;
     public bool stopMoving = false;
+    public bool hit;
+    bool stun;
+    string direction;
+    [SerializeField] float upKnockback;
+    [SerializeField] float backKnockback;
+    Rigidbody2D rb;
     void Start()
     {
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
     void FixedUpdate()
@@ -32,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetFloat("speed", moveSpeed);
                 transform.position = new Vector3(transform.position.x + moveSpeed, transform.position.y, transform.position.z);
                 sprite.flipX = false;
+                direction = "right";
             }
             if (Input.GetKey(KeyCode.A))
             {
@@ -46,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetFloat("speed", moveSpeed);
                 transform.position = new Vector3(transform.position.x - moveSpeed, transform.position.y, transform.position.z);
                 sprite.flipX = true;
+                direction = "left";
             }
             if(Input.GetKey(KeyCode.S))
             {
@@ -60,6 +69,33 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetFloat("speed", moveSpeed);
             moveSpeed = 0;
+        }
+        if(hit)
+        {
+            rb.velocity = new Vector3(0, 0, 0);
+            stopMoving = true;
+            stun = true;
+            rb.AddForce(Vector2.up * upKnockback, ForceMode2D.Impulse);
+            if(direction == "right")
+            {
+                Debug.Log(direction);
+                rb.AddForce(Vector2.left * backKnockback, ForceMode2D.Impulse);
+            }
+            else
+            {
+                Debug.Log(direction + "1");
+                rb.AddForce(Vector2.left * -backKnockback, ForceMode2D.Impulse);
+            }
+            hit = false;
+        }
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Ground" && stun)
+        {
+            stun = false;
+            stopMoving = false;
+            rb.velocity = new Vector3(0, 0, 0);
         }
     }
 }

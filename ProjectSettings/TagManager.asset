@@ -9,6 +9,7 @@ TagManager:
   - Terrain
   - End
   - Void
+  - Ladder
   layers:
   - Default
   - TransparentFX
