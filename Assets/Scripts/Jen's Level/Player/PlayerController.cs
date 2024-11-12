@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int speed = 0;
-    public float jumpForce = 5f;
+    public float jumpForce = 3f;
     private bool isJumping = false;
-    private bool isGrounded = true; 
+    private bool isGrounded = true;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
             isJumping = true;
             isGrounded = false;
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-            animator.SetBool("isJumping", true);
+            animator.SetBool("jumping", true);
         }
     }
 
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = true;
             isJumping = false;
-            animator.SetBool("isJumping", false);
+            animator.SetBool("jumping", false);
         }
     }
 }
