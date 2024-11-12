@@ -10,6 +10,8 @@ TagManager:
   - End
   - Void
   - Ladder
+  - Object
+  - Boarder
   layers:
   - Default
   - TransparentFX
