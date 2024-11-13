@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void DieAndRespawn()
+    public void DieAndRespawn()
     {
         if (respawnPoint != null)
         {

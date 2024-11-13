@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FireHelperController : MonoBehaviour
@@ -20,9 +21,9 @@ public class FireHelperController : MonoBehaviour
         rb.velocity = new Vector2(moveDirection * speed, rb.velocity.y);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Boarder"))
+        if (other.gameObject.CompareTag("Boarder"))
         {
             Flip();
         }
