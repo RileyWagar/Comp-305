@@ -6,8 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     public int speed = 0;
     public float jumpForce = 3f;
+    public float dashForce = 3f;
+    public float dashCooldown = 30f;
     private bool isJumping = false;
     private bool isGrounded = true;
+    private bool isDashing = false;
+    private bool canDash = true;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -60,6 +64,32 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             animator.SetBool("jumping", true);
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
+        {
+            StartCoroutine(Dash());
+        }
+    }
+
+    private IEnumerator Dash()
+    {
+        canDash = false;
+        isDashing = true;
+
+        float dashDirection = isFacingRight ? 1 : -1;
+        rb.AddForce(new Vector2(dashDirection * dashForce, 0), ForceMode2D.Impulse);
+
+        yield return new WaitForSeconds(0.2f);
+
+        isDashing = false;
+
+        StartCoroutine(DashCooldown());
+    }
+
+    private IEnumerator DashCooldown()
+    {
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 
     private void Flip()
@@ -80,7 +110,16 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
-            DieAndRespawn();
+            if (isDashing)
+            {
+                Destroy(collision.gameObject);
+                StopCoroutine(DashCooldown());
+                canDash = true;
+            }
+            else
+            {
+                DieAndRespawn();
+            }
         }
     }
 

@@ -12,6 +12,9 @@ TagManager:
   - Ladder
   - Object
   - Boarder
+  - Train End
+  - Train Start 1
+  - Train Start 2
   layers:
   - Default
   - TransparentFX
