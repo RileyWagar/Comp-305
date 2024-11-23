@@ -199,6 +199,9 @@ MonoBehaviour:
   moveSpeedIncrease: 0.025
   moveSpeed: 0
   stopMoving: 0
+  hit: 0
+  upKnockback: 0
+  backKnockback: 0
 --- !u!114 &8940618133375727745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +234,7 @@ MonoBehaviour:
   dashDurationMax: 75
   movement: {fileID: 3134080823228209930}
   collision: {fileID: 6327643725521392670}
+  dash1: {fileID: 3841427506935972425, guid: 7366dac09d8907647835d0099cac6b44, type: 3}
   jump: {fileID: 8940618133375727745}
   dash: 0
   dashing: 0

@@ -11,6 +11,8 @@ public class PlayerDash : MonoBehaviour
     public DashCollision collision;
     Rigidbody2D rb;
     Animator anim;
+    public AudioSource source;
+    public AudioClip dash1;
     public PlayerJump jump;
     public bool dash = true;
     int dashDuration;
@@ -43,6 +45,7 @@ public class PlayerDash : MonoBehaviour
                 collision.dashing = true;
                 movement.moveSpeed = 0;
                 anim.SetBool("dashing", true);
+                source.PlayOneShot(dash1);
             }
             else if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
             {
@@ -52,6 +55,7 @@ public class PlayerDash : MonoBehaviour
                 collision.dashing = true;
                 movement.moveSpeed = 0;
                 anim.SetBool("dashing", true);
+                source.PlayOneShot(dash1);
             }
             else if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W))
             {
@@ -61,6 +65,7 @@ public class PlayerDash : MonoBehaviour
                 collision.dashing = true;
                 movement.moveSpeed = 0;
                 anim.SetBool("dashing", true);
+                source.PlayOneShot(dash1);
             }
             else if(Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
             {
@@ -70,6 +75,7 @@ public class PlayerDash : MonoBehaviour
                 collision.dashing = true;
                 movement.moveSpeed = 0;
                 anim.SetBool("dashing", true);
+                source.PlayOneShot(dash1);
             }
             else if(Input.GetKey(KeyCode.A))
             {
@@ -79,6 +85,7 @@ public class PlayerDash : MonoBehaviour
                 collision.dashing = true;
                 movement.moveSpeed = 0;
                 anim.SetBool("dashing", true);
+                source.PlayOneShot(dash1);
             }
             else if(Input.GetKey(KeyCode.D))
             {
@@ -88,6 +95,7 @@ public class PlayerDash : MonoBehaviour
                 collision.dashing = true;
                 movement.moveSpeed = 0;
                 anim.SetBool("dashing", true);
+                source.PlayOneShot(dash1);
             }
             else if(Input.GetKey(KeyCode.W))
             {
@@ -97,6 +105,7 @@ public class PlayerDash : MonoBehaviour
                 collision.dashing = true;
                 movement.moveSpeed = 0;
                 anim.SetBool("dashing", true);
+                source.PlayOneShot(dash1);
             }
             else if(Input.GetKey(KeyCode.S))
             {
@@ -106,6 +115,7 @@ public class PlayerDash : MonoBehaviour
                 collision.dashing = true;
                 movement.moveSpeed = 0;
                 anim.SetBool("dashing", true);
+                source.PlayOneShot(dash1);
             }
         }
         if(dashUp)

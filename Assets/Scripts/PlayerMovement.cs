@@ -6,12 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
     Animator anim;
     SpriteRenderer sprite;
+    public GameObject footstep;
     [SerializeField] float maxMoveSpeed;
     [SerializeField] float moveSpeedIncrease;
     public float moveSpeed = 0;
     public bool stopMoving = false;
     public bool hit;
     bool stun;
+    public PlayerJump jump;
     string direction;
     [SerializeField] float upKnockback;
     [SerializeField] float backKnockback;
@@ -40,6 +42,10 @@ public class PlayerMovement : MonoBehaviour
                 transform.position = new Vector3(transform.position.x + moveSpeed, transform.position.y, transform.position.z);
                 sprite.flipX = false;
                 direction = "right";
+                if(jump.onGround)
+                {
+                    Footsteps();
+                }
             }
             if (Input.GetKey(KeyCode.A))
             {
@@ -55,6 +61,10 @@ public class PlayerMovement : MonoBehaviour
                 transform.position = new Vector3(transform.position.x - moveSpeed, transform.position.y, transform.position.z);
                 sprite.flipX = true;
                 direction = "left";
+                if (jump.onGround)
+                {
+                    Footsteps();
+                }
             }
             if(Input.GetKey(KeyCode.S))
             {
@@ -69,6 +79,11 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetFloat("speed", moveSpeed);
             moveSpeed = 0;
+            StopFootSteps();
+        }
+        if(!jump.onGround)
+        {
+            StopFootSteps();
         }
         if(hit)
         {
@@ -88,6 +103,14 @@ public class PlayerMovement : MonoBehaviour
             }
             hit = false;
         }
+    }
+    void Footsteps()
+    {
+        footstep.SetActive(true);
+    }
+    void StopFootSteps()
+    {
+        footstep.SetActive(false);
     }
     void OnCollisionEnter2D(Collision2D other)
     {
