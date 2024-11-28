@@ -5,7 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 91ddc762a5a5aca4b9d4555d3e72fb0c
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 641e0c057ebd52540bb75cd3a76103ef
+  - enabled: 1
+    path: Assets/Scenes/Jen's Level.unity
+    guid: c5ebffe5a78bb2d4ab772e772d2443c5
+  - enabled: 1
+    path: Assets/Scenes/Riley's Level Part A.unity
+    guid: b8bc03030365c534aa6f1117987f4c9a
   m_configObjects: {}

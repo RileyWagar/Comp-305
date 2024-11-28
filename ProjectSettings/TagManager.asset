@@ -16,6 +16,7 @@ TagManager:
   - Train Start 1
   - Train Start 2
   - BulletBorder
+  - Level End
   layers:
   - Default
   - TransparentFX
