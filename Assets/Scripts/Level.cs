@@ -13,8 +13,6 @@ public class Level : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        checkpoint = new Vector3(-8.41f, 71.6f, 0);
-        transform.position = checkpoint;
     }
     void Update()
     {
@@ -26,12 +24,7 @@ public class Level : MonoBehaviour
         if(start)
         {
             rb.velocity = new Vector3(0, 0, 0);
-            transform.position = checkpoint;
-        }
-        if(start && Input.GetKey(KeyCode.Space))
-        {
-            checkpoint = new Vector3(-8.9f, -4.45f, 0);
-            transform.position = checkpoint;
+            transform.position = PlayerStats.checkpoint;
             start = false;
         }
     }

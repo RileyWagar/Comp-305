@@ -21,10 +21,10 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Boundry
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
