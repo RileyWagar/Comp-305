@@ -48,10 +48,14 @@ public class Ladder : MonoBehaviour
     {
         if(other.tag == "Ladder")
         {
-            anim.SetBool("climbing", false);
-            touchingLadder = false;
-            movement.stopMoving = false;
-            climbing = false;
+            ExitLadder();
         }
+    }
+    public void ExitLadder()
+    {
+        anim.SetBool("climbing", false);
+        touchingLadder = false;
+        movement.stopMoving = false;
+        climbing = false;
     }
 }

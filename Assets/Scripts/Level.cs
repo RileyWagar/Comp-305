@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class Level : MonoBehaviour
 {
@@ -10,6 +11,12 @@ public class Level : MonoBehaviour
     public PlayerDash dash;
     public PlayerJump jump;
     Rigidbody2D rb;
+    public SceneSwitcher scene;
+    public GameObject levelEndCanvas;
+    public PolygonCollider2D borderB;
+    public PolygonCollider2D borderC;
+    public CinemachineConfiner confiner;
+    public CinemachineVirtualCamera cam;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,7 +25,7 @@ public class Level : MonoBehaviour
     {
         if(PlayerStats.health <= 0)
         {
-            transform.position = checkpoint;
+            transform.position = PlayerStats.checkpoint;
             PlayerStats.health = 3;
         }
         if(start)
@@ -32,19 +39,31 @@ public class Level : MonoBehaviour
     {
         if(other.tag == "End")
         {
-            if(checkpoint == new Vector3(-8.9f, -4.45f, 0))
+            Debug.Log(PlayerStats.checkpoint);
+            if(PlayerStats.checkpoint == new Vector3(77.04f, -12.54f, 0))
             {
-                checkpoint = new Vector3(261.6f, -3.479763f, 0);
+                levelEndCanvas.SetActive(true);
+                movement.stopMoving = true;
             }
-            else if(checkpoint == new Vector3(261.6f, -3.479763f, 0))
+            if (other.name == "Checkpoint A")
             {
-                checkpoint = new Vector3(325.2f, -2.84f, 0);
+                PlayerStats.checkpoint = new Vector3(265f, -3.3f, 0);
+                confiner.m_BoundingShape2D = borderB;
+                cam.m_Lens.OrthographicSize = 8.1f;
+                transform.position = PlayerStats.checkpoint;
             }
-            else if(checkpoint == new Vector3(325.2f, -2.84f, 0))
+            else if(other.name == "Checkpoint B")
             {
-
+                PlayerStats.checkpoint = new Vector3(326f, -3.3f, 0);
+                confiner.m_BoundingShape2D = borderC;
+                cam.m_Lens.OrthographicSize = 11.8f;
+                transform.position = PlayerStats.checkpoint;
             }
-            transform.position = checkpoint;
+            else if(other.name == "End")
+            {
+                levelEndCanvas.SetActive(true);
+                movement.stopMoving = true;
+            }    
         }
         if(other.tag == "Void")
         {

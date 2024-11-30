@@ -11,9 +11,9 @@ public class SceneSwitcher : MonoBehaviour
         {
             PlayerStats.checkpoint = new Vector3(77.04f, -12.54f, 0);
         }
-        else if(sceneName == "Riley's Level")
+        else if(sceneName == "Riley's Level Part A")
         {
-            PlayerStats.checkpoint = new Vector3(-8.274998f, -6.76f, 0);
+            PlayerStats.checkpoint = new Vector3(-9.3f, -5.6f, 0);
         }
     }
 }

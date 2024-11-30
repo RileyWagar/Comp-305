@@ -9,6 +9,7 @@ public class PlayerJump : MonoBehaviour
     public bool doubleJump = true;
     public bool onGround = true;
     Rigidbody2D rb;
+    public Ladder ladder;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,6 +19,10 @@ public class PlayerJump : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && (onGround == true || doubleJump == true))
         {
+            if(ladder.climbing)
+            {
+                ladder.ExitLadder();
+            }
             anim.SetBool("jumpStart", true);
             anim.SetBool("jumping", false);
             rb.velocity = new Vector3(0, 0, 0);

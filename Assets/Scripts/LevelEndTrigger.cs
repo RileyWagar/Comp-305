@@ -3,7 +3,7 @@ using UnityEngine;
 public class LevelEndTrigger : MonoBehaviour
 {
     public GameObject levelEndCanvas; // Assign your canvas in the inspector
-
+    public PlayerMovement movement;
     private void Start()
     {
         if (levelEndCanvas != null)
@@ -24,6 +24,7 @@ public class LevelEndTrigger : MonoBehaviour
         {
             // Activate the canvas
             levelEndCanvas.SetActive(true);
+            movement.stopMoving = false;
         }
     }
 }
