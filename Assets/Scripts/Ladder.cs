@@ -30,6 +30,10 @@ public class Ladder : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + climbSpeed, transform.position.z);
         }
+        if(climbing && Input.GetKey(KeyCode.S))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - climbSpeed, transform.position.z);
+        }
         if(climbing)
         {
             rb.velocity = new Vector3(0, 0, 0);

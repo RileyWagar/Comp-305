@@ -10,6 +10,7 @@ public class PlayerJump : MonoBehaviour
     public bool onGround = true;
     Rigidbody2D rb;
     public Ladder ladder;
+    public bool hit;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,7 +18,7 @@ public class PlayerJump : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && (onGround == true || doubleJump == true))
+        if (Input.GetKeyDown(KeyCode.Space) && (onGround == true || doubleJump == true) && !hit)
         {
             if(ladder.climbing)
             {
@@ -46,6 +47,7 @@ public class PlayerJump : MonoBehaviour
             anim.SetBool("jumpStart", false);
             onGround = true;
             doubleJump = true;
+            hit = false;
         }
     }
     void OnCollisionExit2D(Collision2D other)

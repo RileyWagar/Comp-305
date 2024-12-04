@@ -27,6 +27,7 @@ public class PlayerDash : MonoBehaviour
     bool dashDownRight;
     int dashFreezeTimer = 0;
     bool stopDash;
+    public bool hit;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -35,7 +36,7 @@ public class PlayerDash : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && dash)
+        if(Input.GetKeyDown(KeyCode.LeftShift) && dash && !hit)
         {
             if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
             {
@@ -365,6 +366,7 @@ public class PlayerDash : MonoBehaviour
     {
         if(other.gameObject.tag == "Ground")
         {
+            hit = false;
             dash = true;
             stopDash = true;
         }

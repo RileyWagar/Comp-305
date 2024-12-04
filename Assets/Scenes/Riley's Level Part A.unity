@@ -3251,7 +3251,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8940618133375727745, guid: d35d0177655f51641966158973c6ad86, type: 3}
   m_PrefabInstance: {fileID: 195488905}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1416652880}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 613313f0f0d2b4f42b4a4453b078c1c7, type: 3}
@@ -7257,6 +7257,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bb8654e7ad53ef54e984708d4d7d5861, type: 3}
+--- !u!1 &1416652880 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6780673013624273092, guid: d35d0177655f51641966158973c6ad86, type: 3}
+  m_PrefabInstance: {fileID: 195488905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1420183399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9649,7 +9654,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2562060572590828983, guid: d35d0177655f51641966158973c6ad86, type: 3}
   m_PrefabInstance: {fileID: 195488905}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1416652880}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c215e61644a2d494cb0b605e48273117, type: 3}
@@ -11229,7 +11234,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3134080823228209930, guid: d35d0177655f51641966158973c6ad86, type: 3}
   m_PrefabInstance: {fileID: 195488905}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1416652880}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2ef40cd327e009428f78e3ea62b1c36, type: 3}
@@ -11537,6 +11542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2138819970486097901, guid: 31cda522112330543bb76be6ec1e02f9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2415a41917d0f74489e8bc92e86b6859, type: 3}
     - target: {fileID: 4315980709474883052, guid: 31cda522112330543bb76be6ec1e02f9, type: 3}
       propertyPath: m_Name
       value: Footsteps
@@ -11581,6 +11590,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9123089300350798955, guid: 31cda522112330543bb76be6ec1e02f9, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1416652880}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

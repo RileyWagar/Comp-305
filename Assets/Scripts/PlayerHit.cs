@@ -6,6 +6,7 @@ public class PlayerHit : MonoBehaviour
 {
     public PlayerDash dash;
     public PlayerMovement movement;
+    public PlayerJump jump;
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy" && !dash.dashing)
@@ -14,6 +15,8 @@ public class PlayerHit : MonoBehaviour
             if(PlayerStats.health > 0)
             {
                 movement.hit = true;
+                jump.hit = true;
+                dash.hit = true;
             }
         }
     }

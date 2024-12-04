@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dash: {fileID: 8110834682359158267}
   movement: {fileID: 3134080823228209930}
+  jump: {fileID: 8940618133375727745}
 --- !u!1 &6780673013624273092
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +315,8 @@ MonoBehaviour:
   jumpForce: 10
   doubleJump: 0
   onGround: 1
+  ladder: {fileID: 0}
+  hit: 0
 --- !u!114 &8110834682359158267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,6 +372,12 @@ MonoBehaviour:
   movement: {fileID: 3134080823228209930}
   dash: {fileID: 8110834682359158267}
   jump: {fileID: 8940618133375727745}
+  scene: {fileID: 0}
+  levelEndCanvas: {fileID: 0}
+  borderB: {fileID: 0}
+  borderC: {fileID: 0}
+  confiner: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!61 &5673921937829718550
 BoxCollider2D:
   m_ObjectHideFlags: 0
