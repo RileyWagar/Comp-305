@@ -21,6 +21,7 @@ public class Gun : MonoBehaviour
         if (bulletPrefab != null && shootPoint != null)
         {
             Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
+            Debug.Log("Shooting");
         }
     }
 }

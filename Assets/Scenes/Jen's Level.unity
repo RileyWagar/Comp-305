@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dash is recharged every 30 seconds but
+  m_text: 'You can only dash once per jump but
 
     dashing through an enemy recharges
     it

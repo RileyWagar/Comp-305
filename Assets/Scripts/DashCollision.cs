@@ -11,7 +11,7 @@ public class DashCollision : MonoBehaviour
         if(other.tag == "Enemy" && dashing)
         {
             dash.dash = true;
-            Destroy(other.gameObject);
+            other.GetComponent<EnemyDestroyed>().destroy = true;
         }
     }
 }
