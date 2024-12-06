@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4716643700927208544}
   - component: {fileID: 3248208806610239711}
   - component: {fileID: 5534256129485184965}
-  - component: {fileID: 8609437341523571181}
+  - component: {fileID: 1775916220392904913}
   m_Layer: 0
   m_Name: Turrent
   m_TagString: Enemy
@@ -199,7 +199,7 @@ PolygonCollider2D:
       - {x: 0.14, y: -0.114999995}
       - {x: 0.14, y: 0.114999995}
   m_UseDelaunayMesh: 0
---- !u!95 &8609437341523571181
+--- !u!95 &1775916220392904913
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ Animator:
   m_GameObject: {fileID: 4417844008378235497}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4272f7a2c966c5b4b8a15627709151cd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
