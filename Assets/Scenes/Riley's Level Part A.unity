@@ -1488,7 +1488,7 @@ PrefabInstance:
       objectReference: {fileID: 1791442951}
     - target: {fileID: 8940618133375727745, guid: d35d0177655f51641966158973c6ad86, type: 3}
       propertyPath: jumpForce
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8940618133375727745, guid: d35d0177655f51641966158973c6ad86, type: 3}
       propertyPath: doubleJump
@@ -1497,7 +1497,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5597500140563936471, guid: d35d0177655f51641966158973c6ad86, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1399736055}
   m_SourcePrefab: {fileID: 100100000, guid: d35d0177655f51641966158973c6ad86, type: 3}
 --- !u!1001 &231540584
 PrefabInstance:
@@ -6250,7 +6253,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4417844008378235497, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
       propertyPath: m_Name
-      value: Turrent (3)
+      value: Turrent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417844008378235497, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
+      propertyPath: m_TagString
+      value: Turrent
       objectReference: {fileID: 0}
     - target: {fileID: 7941563443173291877, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6962,6 +6969,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce9d111486fb4234395587687e5d07a9, type: 3}
+--- !u!1 &1330217525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4417844008378235497, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
+  m_PrefabInstance: {fileID: 1728866364957804141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1330217532
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330217525}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1001 &1356008322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7165,6 +7204,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce9d111486fb4234395587687e5d07a9, type: 3}
+--- !u!1 &1399736051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5597500140563936471, guid: d35d0177655f51641966158973c6ad86, type: 3}
+  m_PrefabInstance: {fileID: 195488905}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1399736055
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399736051}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &1401695824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3562954782847570386, guid: ce9d111486fb4234395587687e5d07a9, type: 3}
@@ -8283,7 +8354,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4417844008378235497, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
       propertyPath: m_Name
-      value: Turrent (2)
+      value: Turrent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417844008378235497, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
+      propertyPath: m_TagString
+      value: Turrent
       objectReference: {fileID: 0}
     - target: {fileID: 7941563443173291877, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11544,6 +11619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turrent
       objectReference: {fileID: 0}
+    - target: {fileID: 4417844008378235497, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
+      propertyPath: m_TagString
+      value: Turrent
+      objectReference: {fileID: 0}
     - target: {fileID: 7941563443173291877, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 89.44
@@ -11587,7 +11666,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4417844008378235497, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1330217532}
   m_SourcePrefab: {fileID: 100100000, guid: 35d257ed9e2302d4093d59d76b89248e, type: 3}
 --- !u!1001 &2579813826822159158
 PrefabInstance:

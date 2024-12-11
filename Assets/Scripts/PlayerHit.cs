@@ -19,5 +19,16 @@ public class PlayerHit : MonoBehaviour
                 dash.hit = true;
             }
         }
+
+        if (other.tag == "Turrent" && !dash.dashing)
+        {
+            PlayerStats.health--;
+            if (PlayerStats.health > 0)
+            {
+                movement.hit = true;
+                jump.hit = true;
+                dash.hit = true;
+            }
+        }
     }
 }
