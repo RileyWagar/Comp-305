@@ -17,6 +17,8 @@ public class Bullet : MonoBehaviour
 
         rb.gravityScale = 0f;
 
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+
         rb.freezeRotation = true;
 
         rb.velocity = -transform.right * speed;
@@ -26,11 +28,9 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Destroy (gameObject);
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }

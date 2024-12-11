@@ -28,6 +28,7 @@ public class PlayerDash : MonoBehaviour
     int dashFreezeTimer = 0;
     bool stopDash;
     public bool hit;
+    bool grounded;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -36,7 +37,7 @@ public class PlayerDash : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift) && dash && !hit)
+        if(Input.GetKeyDown(KeyCode.LeftShift) && dash && !hit && !grounded)
         {
             if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
             {
@@ -369,6 +370,7 @@ public class PlayerDash : MonoBehaviour
             hit = false;
             dash = true;
             stopDash = true;
+            grounded = true;
         }
         if(other.gameObject.tag == "Terrain");
         {
@@ -380,6 +382,7 @@ public class PlayerDash : MonoBehaviour
         if(other.gameObject.tag == "Ground" || other.gameObject.tag == "Terrain")
         {
             stopDash = false;
+            grounded = false;
         }
     }
 }
