@@ -25,7 +25,6 @@ public class EnemyDestroyed : MonoBehaviour
             else
             {
                 timer--;
-                Debug.Log("Timer");
             }
         }
     }

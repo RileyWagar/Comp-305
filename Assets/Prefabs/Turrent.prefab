@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5665857057109286282, guid: a2d1c7c20a4e1a64483900b346ac7988, type: 3}
   shootPoint: {fileID: 906593268591735840}
-  fireRate: 5
+  fireRate: 4
 --- !u!114 &3248208806610239711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroy: 0
-  timerMax: 0
+  timerMax: 200
 --- !u!60 &5534256129485184965
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -178,7 +178,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

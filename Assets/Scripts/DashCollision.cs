@@ -12,17 +12,7 @@ public class DashCollision : MonoBehaviour
         {
             dash.dash = true;
             other.GetComponent<EnemyDestroyed>().destroy = true;
+            Debug.Log("Destroyed");
         }
-        else if (other.CompareTag("Turrent") && dashing)
-        {
-            dash.dash = true;
-
-            TurrentDestroy Turrent = other.GetComponent<TurrentDestroy>();
-            if (Turrent != null)
-            {
-                Turrent.TriggerDestruction();
-            }
-        }
-
     }
 }
