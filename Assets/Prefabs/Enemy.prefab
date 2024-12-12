@@ -101,6 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroy: 0
   timerMax: 200
+  source: {fileID: 7817347895722667983, guid: 3c11526d675652643b41b617d16fcaae, type: 3}
+  destroyed: {fileID: 8300000, guid: 2b20d0cc494897e4fac36414b0d063c2, type: 3}
+  playAudio: 0
 --- !u!61 &8044563013306477911
 BoxCollider2D:
   m_ObjectHideFlags: 0

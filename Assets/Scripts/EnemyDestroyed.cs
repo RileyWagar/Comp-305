@@ -18,7 +18,7 @@ public class EnemyDestroyed : MonoBehaviour
         if(destroy)
         {
             anim.SetBool("destroyed", true);
-            if(timer == 0)
+            if (timer == 0)
             {
                 Destroy(gameObject);
             }

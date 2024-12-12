@@ -694,6 +694,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 761538261}
     m_Modifications:
+    - target: {fileID: 2138819970486097901, guid: 31cda522112330543bb76be6ec1e02f9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2415a41917d0f74489e8bc92e86b6859, type: 3}
     - target: {fileID: 4315980709474883052, guid: 31cda522112330543bb76be6ec1e02f9, type: 3}
       propertyPath: m_Name
       value: Footsteps
@@ -1641,6 +1645,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6327643725521392670, guid: d35d0177655f51641966158973c6ad86, type: 3}
+      propertyPath: source
+      value: 
+      objectReference: {fileID: 1487299175}
     - target: {fileID: 6372478473066942931, guid: d35d0177655f51641966158973c6ad86, type: 3}
       propertyPath: m_Mass
       value: 1

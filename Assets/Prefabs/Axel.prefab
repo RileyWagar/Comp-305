@@ -92,6 +92,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dash: {fileID: 8110834682359158267}
   dashing: 0
+  source: {fileID: 7817347895722667983, guid: 3c11526d675652643b41b617d16fcaae, type: 3}
+  destroyed: {fileID: 8300000, guid: 81a95f8b743a2d148b3cff9b6e215285, type: 3}
+  playAudio: 0
 --- !u!1 &6036397082652076592
 GameObject:
   m_ObjectHideFlags: 0

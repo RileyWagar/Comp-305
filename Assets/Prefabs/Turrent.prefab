@@ -135,6 +135,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5665857057109286282, guid: a2d1c7c20a4e1a64483900b346ac7988, type: 3}
   shootPoint: {fileID: 906593268591735840}
   fireRate: 4
+  source: {fileID: 0}
+  shoot: {fileID: 8300000, guid: 81a95f8b743a2d148b3cff9b6e215285, type: 3}
+  playAudio: 0
 --- !u!114 &3248208806610239711
 MonoBehaviour:
   m_ObjectHideFlags: 0

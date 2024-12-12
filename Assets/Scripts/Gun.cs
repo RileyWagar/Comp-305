@@ -7,6 +7,8 @@ public class Gun : MonoBehaviour
     public Transform shootPoint;      
     public float fireRate = 2f;     
     private float nextFireTime = 0f;
+    public AudioSource source;
+    public AudioClip shoot;
 
     void Start()
     {
@@ -27,6 +29,7 @@ public class Gun : MonoBehaviour
     {
         if (bulletPrefab != null && shootPoint != null)
         {
+            AudioSource.PlayClipAtPoint(shoot, transform.position, 1f);
             Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
             anim.SetBool("shooting", true);
         }
